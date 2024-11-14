@@ -210,9 +210,12 @@ movies %>%
 2. Which Comedies with an MPAA rating, over 120 minutes have a rating above 8?
 
 ```{r}
-
+movies %>%
+  filter(length > 120 & rating > 8 & Comedy == 1) %>%
+  drop_na(mpaa)
 ```
-
+  47 movies fit this description.
+  
 3. Create a subset of only Harry Potter movies with the title, rating, budget, and votes. Which movies are included in this data? Which is highest rated? Which has the most votes on imdb.com?
 
 ```{r}
