@@ -238,9 +238,12 @@ movies %>%
 5. Is your favorite movie in the dataset? What other questions could you ask or answer using `filter()`, `select()`, and `arrange()`?
 
 ```{r}
-
+movies %>%
+  filter(str_detect(title, "Lord of the Rings") | str_detect(title, "Star Wars")) %>%
+  select(title,year,rating) %>%
+  arrange(desc(rating))
 ```
-
+  Yes, The Lord of the Rings: The Two Towers franchise is on the list and it's my favorite movie from The Lord of Rings trilogy. We could ask questions using the "or" function and arrange by rating. From this point we could demonstrate that a different series, such as the Star Wars movies have a lower rating in comparison to the overall higher rating that the Lord of the Rings movies that are listed.
 
 
 
