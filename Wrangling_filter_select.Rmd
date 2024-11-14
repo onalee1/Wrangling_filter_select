@@ -228,9 +228,13 @@ movies %>%
 4. What is the highest budget for a movie that is an Animation or Comedy with at least 100 votes?
 
 ```{r}
-
+movies %>%
+  filter(votes >= 100 & (Comedy == 1 | Animation == 1)) %>%
+  select(title, budget, votes) %>%
+  arrange(desc(budget))
 ```
-
+  The film "Wild Wild West" had the highest budget for comedies or animations with more than 100 votes.
+  
 5. Is your favorite movie in the dataset? What other questions could you ask or answer using `filter()`, `select()`, and `arrange()`?
 
 ```{r}
